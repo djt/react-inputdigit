@@ -1,0 +1,35 @@
+{
+  "name": "inputdigit",
+  "version": "0.0.1",
+  "description": ".",
+  "main": "src/InputDigit.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production webpack --optimize-minimize -p --output-filename dist/InputDigit.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djt/InputDigit.git"
+  },
+  "author": "Daniel Treadwell",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/djt/InputDigit/issues"
+  },
+  "homepage": "https://github.com/djt/InputDigit#readme",
+  "dependencies": {
+    "react": "^15.5.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.0",
+    "babel-loader": "^6.2.7",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "webpack": "^1.13.3"
+  }
+}
