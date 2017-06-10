@@ -8,7 +8,7 @@ export default {
         './src/InputDigit.jsx'
     ],
     output: {
-        path: __dirname,
+        path: __dirname + '/dist',
         publicPath: '/',
         filename: './dist/InputDigit.js'
     },
