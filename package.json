@@ -2,7 +2,7 @@
   "name": "inputdigit",
   "version": "0.0.1",
   "description": ".",
-  "main": "./src/InputDigit.jsx",
+  "main": "./src/inputdigit.js",
   "scripts": {
     "test": "",
     "dev": "webpack --watch",
