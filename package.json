@@ -4,8 +4,9 @@
   "description": ".",
   "main": "src/InputDigit.jsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_ENV=production webpack --optimize-minimize -p --output-filename dist/InputDigit.min.js"
+    "test": "",
+    "dev": "webpack --watch",
+    "build": "NODE_ENV=production webpack --optimize-minimize -p --output-filename lib/inputdigit.min.js"
   },
   "repository": {
     "type": "git",

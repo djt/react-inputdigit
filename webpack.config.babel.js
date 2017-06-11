@@ -5,12 +5,19 @@ import path from 'path'
 export default {
     entry: [
         'babel-polyfill',
-        './src/InputDigit.jsx'
+        './src/inputdigit.js'
     ],
     output: {
         path: __dirname,
         publicPath: '/',
-        filename: './dist/InputDigit.js'
+        filename: './lib/inputdigit.js',
+        library: 'inputdigit',
+        libraryTarget: 'umd',
+        umdNameDefine: true
+    },
+    externals: {
+        'react': 'React',
+        'prop-types': 'PropTypes'
     },
     module: {
         loaders: [{
@@ -26,7 +33,7 @@ export default {
         }, {
             test: /\.json$/,
             loader: 'json'
-        }]
+        }],
     },
     resolve: {
         extensions: ['', '.js', '.jsx', '.json'],
