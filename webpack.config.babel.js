@@ -1,43 +1,36 @@
 import Webpack from 'webpack'
-import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import path from 'path'
 
+let libraryName = 'react-inputdigit';
+let plugins = [], outputFile;
+
+outputFile = libraryName + '.js';
+
 export default {
-    entry: [
-        'babel-polyfill',
-        './src/inputdigit.js'
-    ],
-    output: {
-        path: __dirname,
-        publicPath: '/',
-        filename: './lib/inputdigit.js',
-        library: 'inputdigit',
-        libraryTarget: 'umd',
-        umdNameDefine: true
-    },
-    externals: {
-        'react': 'React',
-        'prop-types': 'PropTypes'
-    },
-    module: {
-        loaders: [{
-            exclude: /node_modules/,
-            loader: 'babel-loader',
-            query: {
-                plugins: ['transform-runtime', 'transform-decorators-legacy'],
-                presets: ['es2015','stage-0','react'],
-            },
-        }, {
-            test: /\.css$/,
-            loader: ExtractTextPlugin.extract('style-loader', 'css-loader?camelCase&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'),
-        }, {
-            test: /\.json$/,
-            loader: 'json'
-        }],
-    },
-    resolve: {
-        extensions: ['', '.js', '.jsx', '.json'],
-        root: [
-        ]
-    },
+  entry: __dirname + '/src/library.js',
+  devtool: 'source-map',
+  output: {
+    path: __dirname + '/lib',
+    filename: outputFile,
+    library: libraryName,
+    libraryTarget: 'umd',
+    umdNamedDefine: true
+  },
+  module: {
+    rules: [
+      {
+        test: /(\.jsx|\.js)$/,
+        loader: 'babel-loader',
+        exclude: (/node_modules/),
+      }
+    ]
+  },
+  resolve: {
+    modules: [path.resolve('./src'), path.join(__dirname, 'node_modules')],
+  },
+  externals: {
+    react: 'react',
+    'prop-types': 'prop-types'
+  },
+  plugins: []
 };

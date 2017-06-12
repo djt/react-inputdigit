@@ -28,11 +28,12 @@ export default class InputDigit extends React.Component {
 
     render() {
         return (
-            <div className={'mnml-input-digit-container ' + this.props.className}>
+            <div className={'smpl-inputdigit-container ' + this.props.className}>
                 <i className='fa fa-minus decrease' />
                 <span>{this.state.quantity}</span>
                 <i className='fa fa-plus increase' />
             </div>
         )
     }
+
 }
